@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authentication Complete</title>
+</head>
+<body>
+    <h1>Authentication Complete</h1>
+    <p>You can now close this window and return to the CLI application.</p>
+    <script>
+        // Extract auth code and close window
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        if (code) {
+            localStorage.setItem('qb_auth_code', code);
+        }
+        setTimeout(() => window.close(), 2000);
+    </script>
+</body>
+</html>
